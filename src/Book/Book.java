@@ -68,10 +68,12 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Mã sách: " + this.bookCode + "\n" +
-                "Tên sách: " + this.name + "\n" +
-                "Giá tiền: " + this.price + "\n" +
-                "Tên tác giả: " + this.author;
+        return "Mã sách: " + getBookCode() + "\n" +
+                "Tên sách: " + getName() + "\n" +
+                "Giá tiền: " + getPrice() + "\n" +
+                "Tên tác giả: " + getAuthor();
     }
+
+
 
 }

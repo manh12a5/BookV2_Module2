@@ -51,8 +51,8 @@ public class ProgrammingBook extends Book {
     @Override
     public String toString() {
         return super.toString() + "\n" +
-                "Ngôn ngữ: " + this.language + "\n" +
-                "Framework: " + this.framework;
+                "Ngôn ngữ: " + getLanguage() + "\n" +
+                "Framework: " + getFramework();
     }
 
 }

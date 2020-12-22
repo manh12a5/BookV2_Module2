@@ -49,7 +49,7 @@ public class FictionBook extends Book implements Discount {
     @Override
     public String toString() {
         return super.toString() + "\n" +
-                "Thể loại: " + this.category;
+                "Thể loại: " + getCategory();
     }
 
     public double setDiscount(int persent) {
