@@ -72,16 +72,16 @@ public class ManagerBook {
     }
 
     public double getTotalBook() {
-        return totalOfProgrammingBook + totalOfFictionBook;
+        return getTotalOfProgrammingBook() + getTotalOfFictionBook();
     }
 
-    public double getTotalWhenDiscount() {
+    public void getTotalWhenDiscount() {
         Scanner scanner = new Scanner(System.in);
         FictionBook fictionBook = new FictionBook();
         System.out.print("Nhập phần trăm khuyến mãi: ");
         int persent = scanner.nextInt();
         double discount = getTotalOfFictionBook() - fictionBook.setDiscount(persent);
-        return getTotalBook() - discount;
+        System.out.println("Giá tiền sau khi khuyến mãi là: " + discount);
     }
 
     public void checkLanguageJava() {

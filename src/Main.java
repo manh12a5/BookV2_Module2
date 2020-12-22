@@ -21,13 +21,14 @@ public class Main {
             number = scanner.nextInt();
             switch (number) {
                 case 1:
-                    managerBook.getTotalBook();
+                    System.out.println("Tông tiền: " + managerBook.getTotalBook());
                     break;
                 case 2:
                     managerBook.checkLanguageJava();
                     break;
                 case 3:
-                    System.out.println("Tông tiền là: " + managerBook.getTotalWhenDiscount());
+                    managerBook.getTotalWhenDiscount();
+                    break;
             }
         } while (number != 0);
         System.exit(0);
