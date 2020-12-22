@@ -75,13 +75,13 @@ public class ManagerBook {
         return getTotalOfProgrammingBook() + getTotalOfFictionBook();
     }
 
-    public void getTotalWhenDiscount() {
+    public double getTotalWhenDiscount() {
         Scanner scanner = new Scanner(System.in);
         FictionBook fictionBook = new FictionBook();
         System.out.print("Nhập phần trăm khuyến mãi: ");
         int persent = scanner.nextInt();
         double discount = getTotalOfFictionBook() - fictionBook.setDiscount(persent);
-        System.out.println("Giá tiền sau khi khuyến mãi là: " + discount);
+        return getTotalOfProgrammingBook() + discount;
     }
 
     public void checkLanguageJava() {

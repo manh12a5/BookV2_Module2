@@ -27,7 +27,7 @@ public class Main {
                     managerBook.checkLanguageJava();
                     break;
                 case 3:
-                    managerBook.getTotalWhenDiscount();
+                    System.out.println("Tổng tiền sau khi khuyễn mãi: " + managerBook.getTotalWhenDiscount());
                     break;
             }
         } while (number != 0);
