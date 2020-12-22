@@ -10,6 +10,8 @@ public class ManagerBook {
     //Danh sách thuộc tính
     int numberProgrammingBook;
     int numberFictionBook;
+    double totalOfProgrammingBook = 0;
+    double totalOfFictionBook = 0;
 
     //Tạo List
     ArrayList<ProgrammingBook> arrProgrammingBooks = new ArrayList<>();
@@ -55,15 +57,31 @@ public class ManagerBook {
         return totalOfFictionBook;
     }
 
-    public void getTotalBook() {
-        double totalOfBook = 0;
-        ArrayList<Book> arrbooks = new ArrayList<>();
-        arrbooks.addAll(arrProgrammingBooks);
-        arrbooks.addAll(arrFictionBooks);
-        for (int i = 0; i < arrbooks.size(); i++) {
-            totalOfBook += arrbooks.get(i).getPrice() - getDiscountFictionBook();
+    public double getTotalOfProgrammingBook() {
+        for (int i = 0; i < arrProgrammingBooks.size(); i++) {
+            totalOfProgrammingBook += arrProgrammingBooks.get(i).getPrice();
         }
-        System.out.println("Tông tiền là: " + totalOfBook);
+        return totalOfProgrammingBook;
+    }
+
+    public double getTotalOfFictionBook() {
+        for (int i = 0; i < arrFictionBooks.size(); i++) {
+            totalOfFictionBook += arrFictionBooks.get(i).getPrice();
+        }
+        return totalOfFictionBook;
+    }
+
+    public double getTotalBook() {
+        return totalOfProgrammingBook + totalOfFictionBook;
+    }
+
+    public double getTotalWhenDiscount() {
+        Scanner scanner = new Scanner(System.in);
+        FictionBook fictionBook = new FictionBook();
+        System.out.print("Nhập phần trăm khuyến mãi: ");
+        int persent = scanner.nextInt();
+        double discount = getTotalOfFictionBook() - fictionBook.setDiscount(persent);
+        return getTotalBook() - discount;
     }
 
     public void checkLanguageJava() {

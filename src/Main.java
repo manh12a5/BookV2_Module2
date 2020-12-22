@@ -15,6 +15,7 @@ public class Main {
         do {
             System.out.println("1. Tính tổng tiền sách");
             System.out.println("2. Số sách có ngôn ngữ Java");
+            System.out.println("3. Tổng tiền khi đã trừ khuyến mãi");
             System.out.println("0. Exit");
             System.out.print("Choice Number: ");
             number = scanner.nextInt();
@@ -25,6 +26,8 @@ public class Main {
                 case 2:
                     managerBook.checkLanguageJava();
                     break;
+                case 3:
+                    System.out.println("Tông tiền là: " + managerBook.getTotalWhenDiscount());
             }
         } while (number != 0);
         System.exit(0);
